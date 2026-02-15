@@ -1,37 +1,81 @@
-# 🔍 AgentLint
+# 🤖 AgentLint
 
-<!-- TODO: badges -->
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+**Is your website ready for AI agents?** AgentLint audits web pages for agent-readability — semantic HTML, ARIA coverage, selector stability, WebMCP support, and structured data.
 
-**Audit web pages for AI-agent readability and semantic quality.**
-
-AgentLint analyzes HTML pages and scores how well they can be understood by AI agents, screen readers, and automated tools.
-
-## Vision
-
-The web is increasingly consumed by agents (LLMs, crawlers, assistants). AgentLint helps developers ensure their pages are **agent-friendly** — semantic, structured, and accessible.
-
-## Packages
-
-| Package | Description |
-|---------|-------------|
-| `@agentlint/core` | Core audit engine |
-| `agentlint` (CLI) | Command-line interface |
-| Chrome Extension | Phase 3 |
+> Think Lighthouse, but for AI agents instead of humans.
 
 ## Quick Start
 
 ```bash
-pnpm install
-pnpm build
 npx agentlint audit https://example.com
 ```
 
+## Example Output
+
+```
+  🔍 Auditing https://example.com...
+
+  🟡 Agent-Readiness Score: 62/100
+
+  ─────────────────────────────────────────────
+
+  Semantic HTML            ████████████████░░░░ 80 (25%)
+  ARIA Coverage            ██████████████████░░ 90 (25%)
+  Selector Stability       ██████████░░░░░░░░░░ 50 (15%)
+  WebMCP / Structured Data ███░░░░░░░░░░░░░░░░░ 15 (20%)
+  Meta Information         ████████████████░░░░ 80 (15%)
+
+  ─────────────────────────────────────────────
+
+  💡 Top Improvements:
+
+  1. Add JSON-LD structured data with schema.org vocabulary
+  2. Consider implementing navigator.modelContext (WebMCP)
+  3. Add data-testid attributes to key interactive elements
+```
+
+## What It Checks
+
+| Dimension | Weight | What |
+|-----------|--------|------|
+| **Semantic HTML** | 25% | Semantic tags, heading hierarchy, form labels |
+| **ARIA Coverage** | 25% | Accessible names, alt text, role attributes |
+| **Selector Stability** | 15% | Test IDs, CSS-in-JS hash detection |
+| **WebMCP / Structured Data** | 20% | `navigator.modelContext`, MCP meta, JSON-LD, schema.org |
+| **Meta Information** | 15% | Title, description, Open Graph, canonical, lang |
+
+## CLI Options
+
+```bash
+agentlint audit <url>          # Standard audit
+agentlint audit <url> --json   # JSON output (for CI/CD)
+```
+
+## Why AgentLint?
+
+AI agents (Claude, GPT, Copilot) increasingly browse and interact with web pages. Pages built with semantic HTML, proper ARIA, stable selectors, and structured data are **dramatically easier** for agents to understand and act on.
+
+AgentLint gives you a score and actionable improvements — so your site works great for both humans *and* machines.
+
 ## Roadmap
 
-- [x] Phase 1: Project scaffold & semantic-html rule
-- [ ] Phase 2: Core rules (aria, heading-hierarchy, landmark, link-text)
-- [ ] Phase 3: Chrome extension
-- [ ] Phase 4: CI integration & GitHub Action
-- [ ] Phase 5: Agent-specific rules (structured data, tool-use hints)
+- 🏷️ **AgentLint Badge** — Embed your score on your site
+- 🧩 **Chrome Extension** — Real-time audit in DevTools
+- 🔄 **CI/CD Integration** — GitHub Action to audit on every deploy
+- 📊 **Historical Tracking** — Score trends over time
+- 🌐 **WebMCP Deep Analysis** — Full MCP endpoint validation
+
+## Contributing
+
+Contributions welcome! This project is in early stages — issues, PRs, and ideas are all appreciated.
+
+```bash
+git clone https://github.com/anthropic-tools/agentlint
+cd agentlint
+pnpm install
+pnpm build
+```
+
+## License
+
+MIT

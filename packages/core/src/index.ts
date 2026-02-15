@@ -2,6 +2,8 @@ import { AuditReport, RuleResult } from './types';
 import { semanticHtml } from './rules/semantic-html';
 import { ariaCoverage } from './rules/aria-coverage';
 import { selectorStability } from './rules/selector-stability';
+import { webmcpSupport } from './rules/webmcp-support';
+import { metaInfo } from './rules/meta-info';
 
 export { AuditReport, RuleResult, Score, Issue } from './types';
 
@@ -11,17 +13,17 @@ interface RuleEntry {
 }
 
 const rules: RuleEntry[] = [
-  { fn: semanticHtml, weight: 0.3 },
-  { fn: ariaCoverage, weight: 0.3 },
-  { fn: selectorStability, weight: 0.2 },
-  // WebMCP reserved: 0.2
+  { fn: semanticHtml, weight: 0.25 },
+  { fn: ariaCoverage, weight: 0.25 },
+  { fn: selectorStability, weight: 0.15 },
+  { fn: webmcpSupport, weight: 0.20 },
+  { fn: metaInfo, weight: 0.15 },
 ];
 
 /**
  * Audit a URL for agent-readability.
  */
 export async function audit(url: string): Promise<AuditReport> {
-  // Validate URL
   let parsedUrl: URL;
   try {
     parsedUrl = new URL(url);
@@ -32,7 +34,6 @@ export async function audit(url: string): Promise<AuditReport> {
     throw new Error(`Unsupported protocol: ${parsedUrl.protocol}`);
   }
 
-  // Fetch HTML
   let html: string;
   try {
     const response = await fetch(url, {
@@ -49,15 +50,8 @@ export async function audit(url: string): Promise<AuditReport> {
     throw new Error(`Failed to fetch ${url}: ${(err as Error).message}`);
   }
 
-  // Run rules
   const results = rules.map(r => r.fn(html));
-
-  // Weighted score (remaining 20% for WebMCP defaults to 0)
-  const totalWeight = rules.reduce((s, r) => s + r.weight, 0);
-  const weightedScore = rules.reduce((s, r, i) => s + results[i].score * r.weight, 0);
-  const score = Math.round(weightedScore / totalWeight * (totalWeight / 1.0));
-  // Scale to account for missing WebMCP (80% of total weight available)
-  const finalScore = Math.round(weightedScore);
+  const finalScore = Math.round(rules.reduce((s, r, i) => s + results[i].score * r.weight, 0));
 
   return {
     url,

@@ -1,8 +1,18 @@
 {
   "name": "agentscore",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Audit web pages for AI-agent readability — semantic HTML, ARIA, WebMCP, structured data & more",
-  "keywords": ["ai", "agent", "lint", "accessibility", "webmcp", "audit", "seo", "structured-data", "aria"],
+  "keywords": [
+    "ai",
+    "agent",
+    "lint",
+    "accessibility",
+    "webmcp",
+    "audit",
+    "seo",
+    "structured-data",
+    "aria"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/xiongallen40-design/agentscore"
@@ -11,19 +21,21 @@
   "bin": {
     "agentscore": "dist/index.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "node build.mjs",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@agentscore/core": "workspace:*",
     "chalk": "^4.1.2",
     "commander": "^12.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.2.3",
+    "esbuild": "^0.27.3",
     "typescript": "^5.3.0"
   },
   "license": "MIT",

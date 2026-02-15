@@ -10,7 +10,7 @@ importers:
 
   packages/cli:
     dependencies:
-      '@agentlint/core':
+      '@agentscore/core':
         specifier: workspace:*
         version: link:../core
       chalk:

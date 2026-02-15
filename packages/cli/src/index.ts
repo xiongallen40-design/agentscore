@@ -1,7 +1,6 @@
-#!/usr/bin/env node
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { audit, RuleResult } from '@agentscore/core';
+import { audit, RuleResult } from '../../core/src/index';
 
 const RULE_LABELS: Record<string, string> = {
   'semantic-html': 'Semantic HTML',

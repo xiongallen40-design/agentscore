@@ -1,8 +1,8 @@
 {
-  "name": "agentlint-monorepo",
+  "name": "agentscore-monorepo",
   "version": "0.1.0",
   "private": true,
-  "description": "AgentLint - Web accessibility & agent-readiness auditor",
+  "description": "AgentScore - Web accessibility & agent-readiness auditor",
   "scripts": {
     "build": "pnpm -r build",
     "clean": "pnpm -r clean"

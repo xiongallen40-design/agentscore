@@ -1,7 +1,7 @@
 {
-  "name": "@agentlint/core",
+  "name": "@agentscore/core",
   "version": "0.1.0",
-  "description": "Core audit engine for AgentLint",
+  "description": "Core audit engine for AgentScore",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

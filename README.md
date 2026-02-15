@@ -1,13 +1,13 @@
-# 🤖 AgentLint
+# 🤖 AgentScore
 
-**Is your website ready for AI agents?** AgentLint audits web pages for agent-readability — semantic HTML, ARIA coverage, selector stability, WebMCP support, and structured data.
+**Is your website ready for AI agents?** AgentScore audits web pages for agent-readability — semantic HTML, ARIA coverage, selector stability, WebMCP support, and structured data.
 
 > Think Lighthouse, but for AI agents instead of humans.
 
 ## Quick Start
 
 ```bash
-npx agentlint audit https://example.com
+npx agentscore audit https://example.com
 ```
 
 ## Example Output
@@ -47,19 +47,19 @@ npx agentlint audit https://example.com
 ## CLI Options
 
 ```bash
-agentlint audit <url>          # Standard audit
-agentlint audit <url> --json   # JSON output (for CI/CD)
+agentscore audit <url>          # Standard audit
+agentscore audit <url> --json   # JSON output (for CI/CD)
 ```
 
-## Why AgentLint?
+## Why AgentScore?
 
 AI agents (Claude, GPT, Copilot) increasingly browse and interact with web pages. Pages built with semantic HTML, proper ARIA, stable selectors, and structured data are **dramatically easier** for agents to understand and act on.
 
-AgentLint gives you a score and actionable improvements — so your site works great for both humans *and* machines.
+AgentScore gives you a score and actionable improvements — so your site works great for both humans *and* machines.
 
 ## Roadmap
 
-- 🏷️ **AgentLint Badge** — Embed your score on your site
+- 🏷️ **AgentScore Badge** — Embed your score on your site
 - 🧩 **Chrome Extension** — Real-time audit in DevTools
 - 🔄 **CI/CD Integration** — GitHub Action to audit on every deploy
 - 📊 **Historical Tracking** — Score trends over time
@@ -70,8 +70,8 @@ AgentLint gives you a score and actionable improvements — so your site works g
 Contributions welcome! This project is in early stages — issues, PRs, and ideas are all appreciated.
 
 ```bash
-git clone https://github.com/xiongallen40-design/agentlint
-cd agentlint
+git clone https://github.com/xiongallen40-design/agentscore
+cd agentscore
 pnpm install
 pnpm build
 ```

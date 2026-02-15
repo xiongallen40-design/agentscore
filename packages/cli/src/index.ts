@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { audit, RuleResult } from '@agentlint/core';
+import { audit, RuleResult } from '@agentscore/core';
 
 const RULE_LABELS: Record<string, string> = {
   'semantic-html': 'Semantic HTML',
@@ -81,7 +81,7 @@ function severityIcon(severity: string): string {
 const program = new Command();
 
 program
-  .name('agentlint')
+  .name('agentscore')
   .description('Audit web pages for AI-agent readability')
   .version('0.1.0');
 

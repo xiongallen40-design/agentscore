@@ -1,0 +1,16 @@
+{
+  "name": "@agentlint/core",
+  "version": "0.1.0",
+  "description": "Core audit engine for AgentLint",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "license": "MIT"
+}

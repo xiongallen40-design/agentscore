@@ -1,0 +1,14 @@
+{
+  "name": "agentlint-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AgentLint - Web accessibility & agent-readiness auditor",
+  "scripts": {
+    "build": "pnpm -r build",
+    "clean": "pnpm -r clean"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  }
+}

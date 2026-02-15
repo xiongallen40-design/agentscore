@@ -1,0 +1,20 @@
+{
+  "name": "agentlint",
+  "version": "0.1.0",
+  "description": "CLI for AgentLint",
+  "bin": {
+    "agentlint": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@agentlint/core": "workspace:*",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "license": "MIT"
+}

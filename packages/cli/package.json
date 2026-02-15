@@ -5,9 +5,9 @@
   "keywords": ["ai", "agent", "lint", "accessibility", "webmcp", "audit", "seo", "structured-data", "aria"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/anthropic-tools/agentlint"
+    "url": "https://github.com/xiongallen40-design/agentlint"
   },
-  "homepage": "https://github.com/anthropic-tools/agentlint#readme",
+  "homepage": "https://github.com/xiongallen40-design/agentlint#readme",
   "bin": {
     "agentlint": "dist/index.js"
   },

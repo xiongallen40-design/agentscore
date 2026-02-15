@@ -70,7 +70,7 @@ AgentLint gives you a score and actionable improvements — so your site works g
 Contributions welcome! This project is in early stages — issues, PRs, and ideas are all appreciated.
 
 ```bash
-git clone https://github.com/anthropic-tools/agentlint
+git clone https://github.com/xiongallen40-design/agentlint
 cd agentlint
 pnpm install
 pnpm build

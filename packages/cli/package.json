@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@agentlint/core": "workspace:*",
+    "chalk": "^4.1.2",
     "commander": "^12.0.0"
   },
   "devDependencies": {
+    "@types/node": "^25.2.3",
     "typescript": "^5.3.0"
   },
   "license": "MIT"

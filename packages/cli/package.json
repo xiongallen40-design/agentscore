@@ -1,5 +1,5 @@
 {
-  "name": "agentlint",
+  "name": "agentlint-web",
   "version": "0.1.0",
   "description": "Audit web pages for AI-agent readability — semantic HTML, ARIA, WebMCP, structured data & more",
   "keywords": ["ai", "agent", "lint", "accessibility", "webmcp", "audit", "seo", "structured-data", "aria"],
@@ -9,7 +9,7 @@
   },
   "homepage": "https://github.com/xiongallen40-design/agentlint#readme",
   "bin": {
-    "agentlint": "dist/index.js"
+    "agentlint-web": "dist/index.js"
   },
   "files": ["dist"],
   "scripts": {
